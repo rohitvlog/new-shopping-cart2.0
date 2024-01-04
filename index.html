@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        
+
+        <div class="logo">
+            <img src="logo.jpeg" alt="Logo">
+        </div>
+
+        <nav>
+           <div class="her">
+            <ul>
+                <li><a href="#productDisplay">Products</a></li>
+                <li><a href="#trends">Trends</a></li>
+                <li><a href="#blogs">Read Blogs</a></li>
+                <li><a href="#" class="cart-icon" onclick="toggleSidebar()"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span id="cartQuantity">0</span></a>
+                   
+                </li>
+                <li><a href="wishlist.html" class="wishlist-icon" onclick="toggleWishlist()">Wishlist</a></li>
+            </ul>
+            </div>
+
+            <div class="searchBar">
+                <input type="text" id="searchBar" placeholder="Search..." oninput="searchProduct()"> 
+                <i class ="fa fa-search" aria-hidden="true"></i>
+                
+            </div>
+        </nav>
+     
+        
+    
+        
+    </header>
+
+
+       
+
+    
+    <div id="sidebar" class="sidebar">
+        <h2 class="text">Cart</h2>
+        <ul id="cartItems"></ul>
+        <div id="cartTotal" class="flex-container">
+            <div class="summary-item">
+                <p>GST:</p>
+                <span id="gst">0.00</span>
+            </div>
+            <div class="summary-item">
+                <p>Subtotal:</p>
+                <span id="subtotal">0.00</span>
+            </div>
+            <div class="summary-item">
+                <p>Total:</p>
+                <span id="total">0.00</span>
+            </div>
+        </div>
+    </div>
+   
+    
+    <div class="cartter">
+        <h1>Rohit Shopping Cart</h1>
+    </div>
+
+
+    
+    <div id="productDisplay"></div>
+
+    <div id="trends">
+        <div class="head">
+          <h1>Limited Stocks</h1>
+        </div>
+        <br>
+        <br>
+
+        <div class="slides">
+          <div class="slideCard">
+            <img src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/813sVzTfvaL._AC_UY218_.jpg" alt="" />
+            <img src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/818UhQ1kpdL._AC_UY218_.jpg" alt=""/>
+            <img src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/71DSxfKzkJL._AC_UY218_.jpg" alt="" />
+            <img src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/71d7rfSl0wL._AC_UY218_.jpg"alt=""/>
+
+          </div>
+          <div class="slideCard">
+            <img src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/61GOgFEeZPL._AC_UL320_.jpg" alt="" />
+            <img src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/512d7sK2fZL._AC_UL320_.jpg" alt="" />
+            <img src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/61+VJT8U-LL._AC_UL320_.jpg" alt="" />
+            <img src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/61stQYWQO4L._AC_UL320_.jpg" alt=""/>
+       
+          </div>
+          <div class="slideCard">
+            <img src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/71RWV9IIqPL._AC_UY218_.jpg" alt="" />
+            <img src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/819s6STd6pL._AC_UY218_.jpg" alt="" />
+            <img src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/71sNRvv0rjL._AC_UY218_.jpg" alt="" />
+            <img src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/71IWpC2j2kL._AC_UY218_.jpg" alt=""/>
+          </div>
+          <div class="slideCard">
+            <img src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/81WimZLWH1L._AC_UY218_.jpg" alt="" />
+            <img src="https://m.media-amazon.com/images/I/51oW-QOqhaL._AC_UY218_.jpg" alt="" />
+            <img src="https://m.media-amazon.com/images/I/71Ftzmh3XWL._AC_UY218_.jpg" alt="" />
+            <img src="https://m.media-amazon.com/images/I/81guvfQzeVL._AC_UY218_.jpg" alt=""/>
+          </div>
+          <div class="slideCard">
+            <img src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/81WimZLWH1L._AC_UY218_.jpg" alt="" />
+            <img src="https://m.media-amazon.com/images/I/61QRgOgBx0L._AC_UY218_.jpg" alt="" />
+            <img src="https://m.media-amazon.com/images/I/61-iwhFQq+L._AC_UY218_.jpg" alt="" />
+            <img src="https://m.media-amazon.com/images/I/71tCOhEigtL._AC_UY218_.jpg" alt=""/>
+          </div>
+          <div class="slideCard">
+            <img src="https://m.media-amazon.com/images/I/61LB+d0vheL._AC_UY218_.jpg" alt="" />
+            <img src="https://m.media-amazon.com/images/I/71r5svsNKyL._AC_UY218_.jpg" alt="" />
+            <img src="https://m.media-amazon.com/images/I/71k3gOik46L._AC_UY218_.jpg" alt="" />
+            <img src="https://m.media-amazon.com/images/I/61gdyDHr9ZL._AC_UY218_.jpg" alt=""/>
+          </div>
+          <div class="slideCard">
+            <img src="https://m.media-amazon.com/images/I/81xJ80yRRzL._AC_UY218_.jpg" alt="" />
+            <img src="https://m.media-amazon.com/images/I/61IiuWQcVjL._AC_UY218_.jpg" alt="" />
+            <img src="https://m.media-amazon.com/images/I/8195A49fZbL._AC_UY218_.jpg" alt="" />
+            <img src="https://m.media-amazon.com/images/I/712pLRfzDYL._AC_UY218_.jpg" alt=""/>
+          </div>
+          <div class="slideCard">
+            <img src="https://m.media-amazon.com/images/I/51miMtZd8pL._AC_UY218_.jpg" alt="" />
+            <img src="https://m.media-amazon.com/images/I/61xEfGaNzoL._AC_UY218_.jpg" alt="" />
+            <img src="https://m.media-amazon.com/images/I/51TK-AM4k0L._AC_UY218_.jpg" alt="" />
+            <img src="https://m.media-amazon.com/images/I/61CFD796iZL._AC_UY218_.jpg" alt=""/>
+          </div>
+          <div class="slideCard">
+            <img src="https://m.media-amazon.com/images/I/81L6069AwHL._AC_UY218_.jpg" alt="" />
+            <img src="https://m.media-amazon.com/images/I/71SgrNQOEqL._AC_UY218_.jpg" alt="" />
+            <img src="https://m.media-amazon.com/images/I/51TK-AM4k0L._AC_UY218_.jpg" alt="" />
+            <img src="https://m.media-amazon.com/images/I/61CFD796iZL._AC_UY218_.jpg" alt=""/>
+          </div>
+        </div>
+      </div>
+
+
+      <div id="blogs">
+        <div class="head">
+          <h1>Read Blogs</h1>
+        </div>
+        <br>
+        <br>
+        <div class="blogs">
+          <div class="blogcard">
+            <img src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/61QRgOgBx0L._AC_UY218_.jpg" alt="" />
+            <h3>One Plus Latest Trending Phone</h3>
+            <br>
+            <div class="btn">
+            <a href="https://www.oneplus.in/blog">Read</a>
+            </div>
+          </div>
+          <div class="blogcard">
+            <img src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/61OvxXhQgZL._AC_UL320_.jpg" alt="" />
+            
+            <h3>Samsung Latest Trending Phone</h3><br>
+            <div class="btn">
+             <a href="https://news.samsung.com/global/how-samsung-galaxy-has-rewritten-smartphone-history-in-10-innovative-technologies">Read</a>
+           </div>
+          </div>
+          <div class="blogcard">
+            <img src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/81fxjeu8fdL._AC_UY218_.jpg" alt="" />
+            <h3>Iphone Latest Trending Phone</h3><br>
+            <div class="btn">
+            <a href="https://www.apple.com/in/newsroom/2023/06/ios-17-makes-iphone-more-personal-and-intuitive/">Read</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div class="text">
+          <h2>ABOUT</h2><br>
+          <p>Trendig Phones</p>
+          <br>
+          <p>Phone</p> <br>
+          <p>Search</p> <br>
+          <p>Good Phones</p> <br>
+          <p>Best</p> <br>
+        </div>
+        <div class="text">
+          <h2>ONEPLUS</h2> <br>
+          <p>Search</p> <br>
+          <p>Quality</p> <br>
+          <p>Good Performance</p> <br>
+          <p>4500mah</p> <br>
+          <p>Low Price</p> <br>
+        </div>
+
+        <div class="text">
+          <h2>SAMSUNG</h2> <br>
+          <p>Best Battery </p> <br>
+          <p>Quality</p> <br>
+          <p>Good Performance</p> <br>
+          <p>5000mah</p> <br>
+          <p>Low Price</p> <br>
+        </div>
+        <div class="text">
+            <h2>IPHONE</h2> <br>
+            <p>Best Battery </p> <br>
+            <p>Quality</p> <br>
+            <p>Good Performance</p> <br>
+            <p>4000mah</p> <br>
+            <p>Low Price</p> <br>
+          </div>
+        <div class="text">
+          <h2>Connect Us</h2>
+          <br>
+          <i class="fa fa-instagram" aria-hidden="true"> Instagram </i><br><br>
+          <i class="fa fa-twitter" aria-hidden="true">  Twitter </i><br><br>
+          <i class="fa fa-facebook" aria-hidden="true"> Facebook </i><br><br>
+          <i class="fa fa-snapchat" aria-hidden="true"> Snapchat</i>
+
+        </div>
+      </div>
+ 
+   
+
+    <script src="main.js"></script>
+</body>
+
+</html>

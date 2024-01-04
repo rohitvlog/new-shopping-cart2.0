@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#" class="cart-icon" onclick="toggleSidebar()">Cart</a></li>
+                <li><a href="#" class="wishlist-icon" onclick="toggleWishlist()">Wishlist</a></li>
+            </ul>
+
+            <div>
+                <input type="text" id="searchBar" placeholder="Search...">
+                <button onclick="searchProduct()">Search</button>
+            </div>
+        </nav>
+    </header>
+
+    <div id="wishlistDisplay"></div>
+
+    <script src="main.js"></script>
+    <script>
+        // // Call the displayWishlist function when the page loads
+        // displayWishlist();
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const wishlistDisplay = document.getElementById('wishlistDisplay');
+            const urlParams = new URLSearchParams(window.location.search);
+            const wishlistParam = urlParams.get('wishlist');
+            const wishlist = wishlistParam ? JSON.parse(decodeURIComponent(wishlistParam)) : [];
+
+            wishlist.forEach(wishlistItem => {
+                const product = products.find(p => p.id === wishlistItem.productId);
+                if (product) {
+                    const wishlistItemElement = document.createElement('div');
+                    wishlistItemElement.innerHTML = `
+                    <h3>${product.name}</h3>
+                    <p>Price: $${product.price}</p>
+                    <button onclick="removeFromWishlist(${product.id})">Remove from Wishlist</button>
+                `;
+                    wishlistDisplay.appendChild(wishlistItemElement);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
